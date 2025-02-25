@@ -1,59 +1,69 @@
-# PruebaTecnica
+# 🚀 Prueba Técnica - SDi Digital Logroño
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
+Este proyecto ha sido creado para la prueba técnica de **SDi Digital Logroño**.  
+⏳ **Tiempo de desarrollo:** 24 horas.
 
-## Development server
+---
 
-To start a local development server, run:
+## ⚙️ Funcionamiento
 
-```bash
-ng serve
-```
+- Para hacer **login**, solo hay que poner un correo y seleccionar de dónde eres.
+- Si el email termina en **"@sdi.es"**, serás **administrador**; en cualquier otro caso, no.
+- Una vez dentro, se puede ver un **dashboard** con todos los productos.
+- Se pueden **añadir** productos al carrito, **quitar** productos del carrito y **"cobrar"** (simulación de compra que vacía el carrito).
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 👤 **Administradores**
+- En otras pestañas, los **admins** verán una tabla con los productos actuales.
+- Dependiendo de la ciudad de la que seas, tendrás más o menos permisos:
+  - **Madrid** → Puede crear productos, eliminar productos y ver todos.
+  - **Logroño** → Puede crear productos, pero no eliminarlos.
 
-## Code scaffolding
+### 🔐 **Logout**
+Para cerrar sesión, hay que clicar en la parte superior izquierda, donde aparecerá un botón para salir y volver al login.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## ✅ Cosas que he podido hacer
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+✔️ Estilos similares al diseño.  
+✔️ Mostrar productos.  
+✔️ Guardarlos en el carrito.  
+✔️ Mantener los productos en el carrito tras un **F5**.  
+✔️ Mostrar el **nombre del usuario** en la interfaz.  
+✔️ Control de usuarios con **guards**.  
+✔️ Autenticación de administradores con emails **@sdi.es**.  
+✔️ **Formulario de login**.  
+✔️ **Tabla de productos** (sin paginación, pero con scroll infinito).  
+✔️ **Búsqueda** en la tabla de productos.  
+✔️ **Filtro** en el dashboard de productos.  
+✔️ **Creación de productos** (solo si eres admin de Logroño).  
+✔️ **Borrado de productos** (solo si eres admin de Madrid).  
+✔️ Diseño del dashboard algo **responsive** (hasta donde me dio tiempo 😅).  
+✔️ Uso de la fuente proporcionada.  
+✔️ Estilización con **Bootstrap y TailwindCSS**.  
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## ❌ Cosas que me hubiera gustado hacer (pero no me dio tiempo)
 
-To build the project run:
+❌ Descubrir antes que en **Adobe XD** se pueden ver los iconos y estilos con precisión.  
+❌ **Paginación** de la tabla de productos en la vista de admin.  
+❌ Alertas más trabajadas (no usar las **default**).  
+❌ Mejorar el control del formulario (añadir `required` en los campos).  
+❌ **Diseño más responsive**.  
+❌ Más fluidez en la navegación (**transitions, animations...**).  
+❌ Organización del código (con las prisas, hay una vista llamada *admin2*... no debería ser así 😅).  
+❌ **Calendario no desplegable**: actualmente hay que colocar la fecha manualmente (hubiera usado `angular-calendar` o algo similar).  
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 📝 **Resumen de la experiencia**
+Me ha gustado bastante el reto, ha sido más complicado de lo que esperaba. A pesar de eso, me lo he pasado muy bien y me ha gustado ponerme a prueba con esta prueba técnica.  
 
-## Running unit tests
+Aunque, no voy a mentir… **también ha sido bastante estresante** 😆.  
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Cualquier duda, no dudéis en **mandarme un mail**. Estaré muy atento.  
 
-```bash
-ng test
-```
+🙏 **Muchas gracias por la oportunidad**, estaría encantado de hacer la tercera fase y explicar el funcionamiento en más profundidad.  
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+¡Un saludín! 😊
