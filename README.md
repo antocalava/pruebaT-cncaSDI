@@ -4,6 +4,9 @@ Este proyecto ha sido creado para la prueba técnica de **SDi Digital Logroño**
 ⏳ **Tiempo de desarrollo:** 24 horas.
 
 ---
+## 👣 Pasos al clonar el repositorio 
+- Ejecutar npm install para instalar todo y que haya un buen funcionamiento
+- Versión de **Angular**: 19.1.0 (Última... creo jeje)
 
 ## ⚙️ Funcionamiento
 
