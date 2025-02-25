@@ -1,0 +1,81 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Satoshi-Bold";
+    src: url("../public/fonts/Satoshi-Bold.woff2") format("woff2"),
+         url("../public/fonts/Satoshi-Bold.woff") format("woff"),
+         url("../public/fonts/Satoshi-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: "Satoshi-Medium";
+    src: url("../public/fonts/Satoshi-Medium.woff2") format("woff2"),
+         url("../public/fonts/Satoshi-Medium.woff") format("woff"),
+         url("../public/fonts/Satoshi-Medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Satoshi-Light";
+    src: url("../public/fonts/Satoshi-Light.woff2") format("woff2"),
+         url("../public/fonts/Satoshi-Light.woff") format("woff"),
+         url("../public/fonts/Satoshi-Light.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Satoshi-Regular";
+    src: url("../public/fonts/Satoshi-Regular.woff2") format("woff2"),
+         url("../public/fonts/Satoshi-Regular.woff") format("woff"),
+         url("../public/fonts/Satoshi-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #a0a0a0;
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Satoshi-Medium";
+    scrollbar-width: thin;
+    scrollbar-color: #a0a0a0 transparent;
+}
+
+.satoshi-light {
+    font-family: "Satoshi-Light";
+}
+
+.satoshi-medium {
+    font-family: "Satoshi-Medium";
+}
+
+.satoshi-regular {
+    font-family: "Satoshi-Regular";
+}
+
+.satoshi-bold {
+    font-family: "Satoshi-Bold";
+}
+
+body {
+    background-color: #f7f7f7;
+    color: #4d4d4d;
+}

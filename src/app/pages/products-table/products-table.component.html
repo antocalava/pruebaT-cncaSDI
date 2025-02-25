@@ -1,0 +1,107 @@
+<div class="p-5">
+    <div class="flex justify-between items-center">
+        <div class="relative w-full sm:w-64 md:w-80 max-w-xs min-w-40">
+            <input type="text" placeholder="Busca un producto"
+                class="pl-12 px-5 py-2 text-sm border rounded-3xl bg-white shadow-sm w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                (input)="onSearch($event)" />
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="gray"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="absolute left-4 top-1/2 transform -translate-y-1/2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+            </svg>
+        </div>
+
+
+        <button *ngIf="isAdmin2()"
+            class="bg-blue-500 text-white px-3 py-2 btn hover:bg-blue-700 inline-flex items-center gap-2 btn w-full"
+            (click)="navigateToAdmin2()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 12h8" />
+                <path d="M12 8v8" />
+            </svg>
+            <span class="text-sm satoshi-regular">Crear producto</span>
+        </button>
+
+    </div>
+    <div class="max-h-[74vh] overflow-y-auto border-gray-200 table-border mt-3">
+        <table class="min-w-full bg-white mt-4 border-collapse w-full">
+            <thead class="bg-white">
+                <tr class="bg-gray-100">
+                    <th class="px-3 py-1 border">Acciones</th>
+                    <th class="px-3 py-1 border text-left">
+                        Producto
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                            stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="inline ml-1 cursor-pointer">
+                            <path d="m3 16 4 4 4-4" />
+                            <path d="M7 20V4" />
+                            <path d="m21 8-4-4-4 4" />
+                            <path d="M17 4v16" />
+                        </svg>
+                    </th>
+                    <th class="px-3 py-1 border text-left">
+                        Categoría
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                            stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="inline ml-1 cursor-pointer">
+                            <path d="m3 16 4 4 4-4" />
+                            <path d="M7 20V4" />
+                            <path d="m21 8-4-4-4 4" />
+                            <path d="M17 4v16" />
+                        </svg>
+                    </th>
+                    <th class="px-3 py-1 border text-left">
+                        Precio
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of filteredProducts; let i = index" class="border-b border-gray-300">
+                    <td class="p-3 text-center relative menu-container">
+                        <button class="text-gray-500 hover:text-blue-500 w-15 p-3" (click)="toggleMenu(i)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="#adadad" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-ellipsis-vertical">
+                                <circle cx="12" cy="12" r="1" />
+                                <circle cx="12" cy="5" r="1" />
+                                <circle cx="12" cy="19" r="1" />
+                            </svg>
+                        </button>
+
+                        <div *ngIf="activeMenu === i && isAdmin1()"
+                            class="absolute left-[55%] top-0.5/2 -translate-y-1/2 mr-4 w-32 bg-white border rounded-3xl shadow-lg z-30 menu-container">
+                            <button
+                                class="w-full text-left px-4 py-1 text-blue-600 hover:text-blue-400 inline-flex items-center gap-2"
+                                (click)="deleteProduct(i)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="#6382ff" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="hover:stroke-blue-400">
+                                    <path d="M3 6h18" />
+                                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+                                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+                                    <line x1="10" x2="10" y1="11" y2="17" />
+                                    <line x1="14" x2="14" y1="11" y2="17" />
+                                </svg>
+                                Borrar
+                            </button>
+                        </div>
+                    </td>
+                    <td class="p-3 flex items-center w-full">
+                        <div class="containerImagen">
+                            <img [src]="product.image" alt="{{ product.title }}" class="w-12 h-12 rounded-md mr-5 ">
+                        </div>
+                        <span class="mx-4 text-xs">{{ product.title }}</span>
+                    </td>
+                    <td class="p-3 text-xs w-60">{{ product.category }}</td>
+                    <td class="p-2 items-center text-xs w-48">
+                        <span>{{ product.price }} €</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+table {
+  border-spacing: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.table-border {
+  border-radius: 20px;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+  display: table-header-group;
+}
+
+
+th {
+  background-color: #dadada;
+  border: 0;
+}
+
+tr {
+  border-bottom: 1px solid #dddddd !important;
+}
+
+.btn {
+  background-color: #4d71ff;
+  height: 2.5rem;
+  border-radius: 20px;
+  max-width: 10rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.containerImagen {
+  width: 7%;
+  height: 7%;
+  padding: 2px;
+}
+
+.containerImagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+}

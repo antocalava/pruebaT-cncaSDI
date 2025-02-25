@@ -1,0 +1,77 @@
+<div class="w-full px-5 mt-5 mb-5 flex gap-4">
+
+  <div class="row g-2 justify-content-center w-2/3 sm:w-2/3">
+    <div *ngFor="let product of filteredProducts()" class="col-md-4 px-2 pb-4">
+      <div class="shadow-sm rounded-2xl flex flex-col productsCard">
+        <div class="containerImagen">
+          <img [src]="product.image" class="w-full" alt="{{ product.title }}">
+        </div>
+
+        <div class="bg-white p-2 flex flex-row product-text-container">
+          <div class="col-6 px-3 pt-2">
+            <p class="font-medium text-gray-900 truncate">{{ product.title }}</p>
+            <p class="text-gray-500 text-sm satoshi-light">{{ product.price }} €</p>
+          </div>
+          <div class="col-6 btnContainer d-flex flex-column align-items-end justify-content-end">
+            <button
+              class="btn text-xs rounded-pill text-white font-small shadow-md bg-blue-500 hover:bg-blue-700 transition mb-2 mx-1"
+              (click)="addToCart(product)">
+              <span class="btn-text">Añadir</span>
+              <svg class="btn-icon hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="M12 5v14" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-container shadow-lg rounded-2xl bg-white w-1/3 sm:w-2/3 md:w-3/5 lg:w-1/3 h-52">
+    <h3 class="text-lg font-bold border-bottom-gray p-4">Carrito</h3>
+
+    <div class="absolute top-0 right-0 z-10 bg-white p-3 rounded-xl">
+      <select id="categoryFilter"
+        class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+        (change)="onCategoryChange($event)">
+        <option value="">Todos los productos</option>
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+    </div>
+
+    <div class="items-container">
+      <div *ngFor="let item of cart" class="flex items-end justify-between py-2 border-bottom-gray">
+        <img [src]="item.image" class="w-15 h-15 object-cover rounded-lg mx-3 imgCart" alt="{{ item.title }}">
+        <div class="flex-1 px-4">
+          <p class="text-sm font-bold max-w-2xl max-h-1xl">{{ item.title }}</p>
+          <p class="text-gray-500 text-xs">x{{ item.quantity }}</p>
+        </div>
+        <div class="flex flex-col items-end">
+          <button class="text-red-500 text-lg px-4 mb-1" (click)="removeFromCart(item)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="#6382ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-trash-2">
+              <path d="M3 6h18" />
+              <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+              <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+              <line x1="10" x2="10" y1="11" y2="17" />
+              <line x1="14" x2="14" y1="11" y2="17" />
+            </svg>
+          </button>
+          <p class="text-gray-500 text-md px-4 mt-1">{{ item.totalPrice }} €</p>
+        </div>
+      </div>
+    </div>
+    <div class="checkout-button p-4 justify-between items-center py-3 rounded-full cobroBtn" (click)="emptyCart()">
+      <span class="text-xl text-white font-medium">
+        COBRAR
+      </span>
+      <span class="text-white text-sm ml-4 font-light">
+        {{ totalQuantity }} productos | {{ totalPrice }} €
+      </span>
+    </div>
+  </div>
+
+</div>

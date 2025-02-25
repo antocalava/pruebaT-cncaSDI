@@ -1,0 +1,92 @@
+.container {
+  max-width: 80%;
+  margin: auto;
+  border-radius: 20px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+
+.btn-crear {
+  top: 717px;
+  left: 119px;
+  width: 207px;
+  height: 42px;
+
+  background: var(--unnamed-color-4d71ff) 0% 0% no-repeat padding-box;
+  border: 2px solid var(--unnamed-color-4d71ff);
+  background: #4D71FF 0% 0% no-repeat padding-box;
+  border: 2px solid #4D71FF;
+  border-radius: 21px;
+  opacity: 1;
+  color: white;
+}
+
+.text-h2 {
+  font-size: 28px;
+}
+
+.border-bottom-gray {
+  position: relative;
+}
+
+.border-bottom-gray::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e1e1e1;
+}
+
+input,
+select {
+  border-radius: 20px;
+  /* max-width: 25%; */
+  border: 1px solid #4D4D4D !important;
+  max-height: 35px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+input::placeholder,
+select::placeholder {
+  color: #4D4D4D;
+  font-size: 12px;
+  opacity: 1;
+}
+
+label {
+  color: #7A7A7A;
+  font-size: 16px;
+}
+
+.px-5-select {
+  padding-left: 2rem;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+input[type="date"] {
+  appearance: none;
+  -moz-appearance: textfield;
+  padding-left: 2rem !important;
+}
+
+.rounded-btn-plus {
+  border-radius: 20px;
+  bottom: -1vh;
+  right: -1vh;
+}
