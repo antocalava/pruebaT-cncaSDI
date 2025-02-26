@@ -18,8 +18,8 @@ Este proyecto ha sido creado para la prueba técnica de **SDi Digital Logroño**
 ### 👤 **Administradores**
 - En otras pestañas, los **admins** verán una tabla con los productos actuales.
 - Dependiendo de la ciudad de la que seas, tendrás más o menos permisos:
-  - **Madrid** → Puede crear productos, eliminar productos y ver todos.
-  - **Logroño** → Puede crear productos, pero no eliminarlos.
+  - **Madrid** → No puede crear productos, puede eliminar productos y ver la tabla de productos.
+  - **Logroño** → Puede crear productos, ver la tabla de productos, pero no eliminarlos.
 
 ### 🔐 **Logout**
 Para cerrar sesión, hay que clicar en la parte superior izquierda, donde aparecerá un botón para salir y volver al login.
